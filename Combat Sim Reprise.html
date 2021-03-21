@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    
+    
+    <p id=outputinfo></p>
+    
+    <script language="JavaScript">
+        
+        var output = ""
+        
+      //BASE PLAYER OBJECT
+        function playerCharachter(health, mana, strength, intelligence, stamina, agility, wisdom){
+            this.health = health + Math.floor(stamina*0.75)
+            this.mana = mana + Math.floor(intelligence*0.75)
+            this.strength = strength
+            this.intelligence = intelligence
+            this.stamina = stamina
+            this.agility = agility
+            this.wisdom = wisdom
+            this.physicalDamage = 1 + Math.floor(strength*0.75)
+            this.spellPower = 1 + Math.floor(intelligence*0.75)
+        }
+        
+        var player = new playerCharachter(100, 100, 5, 5, 5, 5, 5)
+        
+        //WARRIOR CLASS
+        function warriorClass(health, mana, strength, intelligence, stamina, agility, wisdom){
+            this.health = health
+            this.mana = mana
+            this.strength = strength
+            this.intelligence = intelligence
+            this.stamina = stamina
+            this.agility = agility
+            this.wisdom = wisdom
+            this.physicalDamage = 1
+            this.spellPower = 1
+        }
+        
+        var warrior = new warriorClass(150, 100, 10, 5, 10, 5, 5)
+        
+        warrior.health = warrior.health + Math.floor(player.stamina*0.75)
+        warrior.mana = warrior.mana + Math.floor(player.intelligence*0.75)
+        warrior.strength = warrior.strength + player.strength
+        warrior.intelligence = warrior.intelligence + player.intelligence
+        warrior.stamina = warrior.stamina + player.stamina
+        warrior.agility = warrior.agility + player.agility
+        warrior.wisdom = warrior.wisdom + player.wisdom
+        warrior.physicalDamage = Math.floor(warrior.strength*0.75)
+        warrior.spellPower = Math.floor(warrior.intelligence*0.75)
+        
+        
+        //PROTECTOR CLASS
+        function protectorClass(health, mana, strength, intelligence, stamina, agility, wisdom){
+            this.health = health
+            this.mana = mana
+            this.strength = strength
+            this.intelligence = intelligence
+            this.stamina = stamina
+            this.agility = agility
+            this.wisdom = wisdom
+            this.physicalDamage = 1
+            this.spellPower = 1
+        }
+        
+        var protector = new protectorClass(200, 150, 10, 10, 10, 5, 5)
+        
+        protector.health = protector.health + Math.floor(player.stamina*0.75)
+        protector.mana = protector.mana + Math.floor(player.intelligence*0.75)
+        protector.strength = protector.strength + player.strength
+        protector.intelligence = protector.intelligence + player.intelligence
+        protector.stamina = protector.stamina + player.stamina
+        protector.agility = protector.agility + player.agility
+        protector.wisdom = protector.wisdom + player.wisdom
+        protector.physicalDamage = Math.floor(protector.strength*0.75)
+        protector.spellPower = Math.floor(protector.intelligence*0.75)
+        
+        
+        //SOLDIER CLASS
+        function soldierClass(health, mana, strength, intelligence, stamina, agility, wisdom){
+            this.health = health
+            this.mana = mana
+            this.strength = strength
+            this.intelligence = intelligence
+            this.stamina = stamina
+            this.agility = agility
+            this.wisdom = wisdom
+            this.physicalDamage = 1
+            this.spellPower = 1
+        }
+        
+        var soldier = new soldierClass(150, 100, 15, 5, 10, 10, 5)
+        
+        soldier.health = soldier.health + Math.floor(player.stamina*0.75)
+        soldier.mana = soldier.mana + Math.floor(player.intelligence*0.75)
+        soldier.strength = soldier.strength + player.strength
+        soldier.intelligence = soldier.intelligence + player.intelligence
+        soldier.stamina = soldier.stamina + player.stamina
+        soldier.agility = soldier.agility + player.agility
+        soldier.wisdom = soldier.wisdom + player.wisdom
+        soldier.physicalDamage = Math.floor(soldier.strength*0.75)
+        soldier.spellPower = Math.floor(soldier.intelligence*0.75)
+        
+        
+        //BASE ENEMY OBJECT
+        function Enemy(){
+            
+        }
+        
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    output+= "player base health: " + player.health + "<br>"
+    output+= "player base mana: " + player.mana + "<br>"
+    output+= "player base damage: " + player.physicalDamage + "<br><br>"
+    output+= "Warrior health: " + warrior.health + "<br>"
+    output+= "Warrior mana: " + warrior.mana + "<br>"
+    output+= "Warrior STR: " + warrior.strength + "<br>"
+    output+= "Warrior base damage: " + warrior.physicalDamage + "<br><br>"
+    output+= "Protector health: " + protector.health + "<br>"
+    output+= "Protector mana: " + protector.mana + "<br>"
+    output+= "Protector STR: " + protector.strength + "<br>"
+    output+= "Protector base damage: " + protector.physicalDamage + "<br><br>"
+    output+= "Soldier health: " + soldier.health + "<br>"
+    output+= "Soldier mana: " + soldier.mana + "<br>"
+    output+= "Soldier STR: " + soldier.strength + "<br>"
+    output+= "Soldier base damage: " + soldier.physicalDamage + "<br><br>"
+    
+    
+  document.getElementById("outputinfo").innerHTML = output  
+    
+    </script>
+</head>
+<body>
+   
+   
+   
+    
+</body>
+</html>
